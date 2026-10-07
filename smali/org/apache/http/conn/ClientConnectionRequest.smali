@@ -1,0 +1,17 @@
+###### Class org.apache.http.conn.ClientConnectionRequest (org.apache.http.conn.ClientConnectionRequest)
+.class public interface abstract Lorg/apache/http/conn/ClientConnectionRequest;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
+
+# virtual methods
+.method public abstract abortRequest()V
+.end method
+
+.method public abstract getConnection(JLjava/util/concurrent/TimeUnit;)Lorg/apache/http/conn/ManagedClientConnection;
+.end method

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/drawerLayout"
+    android:background="@color/screenbg"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:background="@null"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/homeHeader"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/header_lay"/>
+            <include layout="@layout/tabs"/>
+            <include layout="@layout/qrcode_gener_viewlay"/>
+            <ImageView
+                android:id="@+id/qrCodeImage"
+                android:background="@null"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/mbRegForm"
+                android:background="@drawable/borders"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:id="@+id/txtvewQRCodeError"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/mbmmswipeerror"/>
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <View
+                android:id="@+id/view"
+                android:background="@drawable/headerbg"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_above="@+id/footerr"/>
+            <RelativeLayout
+                android:id="@+id/footerr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+                <include layout="@layout/socialmedia_lay"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

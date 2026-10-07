@@ -1,0 +1,35 @@
+package com.google.android.gms.internal.location;
+
+import android.app.PendingIntent;
+import android.os.Parcel;
+
+/* JADX INFO: loaded from: classes.dex */
+public abstract class zzl extends zzb implements zzm {
+    public zzl() {
+        super("com.google.android.gms.location.internal.IGeofencerCallbacks");
+    }
+
+    @Override // com.google.android.gms.internal.location.zzb
+    public final boolean zza(int i, Parcel parcel, Parcel parcel2, int i2) {
+        if (i == 1) {
+            int i3 = parcel.readInt();
+            String[] strArrCreateStringArray = parcel.createStringArray();
+            zzc.zzb(parcel);
+            zzb(i3, strArrCreateStringArray);
+        } else if (i == 2) {
+            int i4 = parcel.readInt();
+            String[] strArrCreateStringArray2 = parcel.createStringArray();
+            zzc.zzb(parcel);
+            zzd(i4, strArrCreateStringArray2);
+        } else {
+            if (i != 3) {
+                return false;
+            }
+            int i5 = parcel.readInt();
+            PendingIntent pendingIntent = (PendingIntent) zzc.zza(parcel, PendingIntent.CREATOR);
+            zzc.zzb(parcel);
+            zzc(i5, pendingIntent);
+        }
+        return true;
+    }
+}

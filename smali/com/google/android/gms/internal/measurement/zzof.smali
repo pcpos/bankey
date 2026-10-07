@@ -1,0 +1,18 @@
+###### Class com.google.android.gms.internal.measurement.zzof (com.google.android.gms.internal.measurement.zzof)
+.class public interface abstract Lcom/google/android/gms/internal/measurement/zzof;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# virtual methods
+.method public abstract zza()Z
+.end method
+
+.method public abstract zzb()Z
+.end method
+
+.method public abstract zzc()Z
+.end method
+
+.method public abstract zzd()Z
+.end method

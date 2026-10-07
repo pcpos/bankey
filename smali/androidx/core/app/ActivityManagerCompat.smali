@@ -1,0 +1,33 @@
+###### Class androidx.core.app.ActivityManagerCompat (androidx.core.app.ActivityManagerCompat)
+.class public final Landroidx/core/app/ActivityManagerCompat;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static isLowRamDevice(Landroid/app/ActivityManager;)Z
+    .registers 1
+    .param p0    # Landroid/app/ActivityManager;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-virtual {p0}, Landroid/app/ActivityManager;->isLowRamDevice()Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    return p0
+.end method

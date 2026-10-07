@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/screenbg"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:background="@null"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include
+                android:id="@+id/homeHeaderLay"
+                layout="@layout/header_lay"/>
+            <RelativeLayout
+                android:id="@+id/bal_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/homeHeaderLay">
+                <include
+                    android:id="@+id/balInqLay"
+                    android:visibility="gone"
+                    layout="@layout/dash_bal_lay_with_pager"/>
+            </RelativeLayout>
+            <com.mode.bok.drgdrop.DynamicGridView
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:id="@+id/homeGridLay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:listSelector="#00000000"
+                android:verticalSpacing="17dp"
+                android:numColumns="3"
+                android:layout_below="@+id/bal_lay"/>
+        </RelativeLayout>
+        <include layout="@layout/switchaccount_mm"/>
+    </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

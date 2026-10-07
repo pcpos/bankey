@@ -1,0 +1,1718 @@
+###### Class com.google.android.material.slider.RangeSlider (com.google.android.material.slider.RangeSlider)
+.class public Lcom/google/android/material/slider/RangeSlider;
+.super Lcom/google/android/material/slider/BaseSlider;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/android/material/slider/RangeSlider$RangeSliderState;,
+        Lcom/google/android/material/slider/RangeSlider$OnSliderTouchListener;,
+        Lcom/google/android/material/slider/RangeSlider$OnChangeListener;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/google/android/material/slider/BaseSlider<",
+        "Lcom/google/android/material/slider/RangeSlider;",
+        "Lcom/google/android/material/slider/RangeSlider$OnChangeListener;",
+        "Lcom/google/android/material/slider/RangeSlider$OnSliderTouchListener;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field private minSeparation:F
+
+.field private separationUnit:I
+
+
+# direct methods
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 3
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    const/4 v0, 0x0
+
+    .line 1
+    invoke-direct {p0, p1, v0}, Lcom/google/android/material/slider/RangeSlider;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .registers 4
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/AttributeSet;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+
+    .line 2
+    sget v0, Lcom/google/android/material/R$attr;->sliderStyle:I
+
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/material/slider/RangeSlider;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    .registers 11
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Landroid/util/AttributeSet;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+
+    .line 3
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/material/slider/BaseSlider;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+    .line 4
+    sget-object v2, Lcom/google/android/material/R$styleable;->RangeSlider:[I
+
+    sget v4, Lcom/google/android/material/slider/BaseSlider;->DEF_STYLE_RES:I
+
+    const/4 v6, 0x0
+
+    new-array v5, v6, [I
+
+    move-object v0, p1
+
+    move-object v1, p2
+
+    move v3, p3
+
+    .line 5
+    invoke-static/range {v0 .. v5}, Lcom/google/android/material/internal/ThemeEnforcement;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)Landroid/content/res/TypedArray;
+
+    move-result-object p1
+
+    .line 6
+    sget p2, Lcom/google/android/material/R$styleable;->RangeSlider_values:I
+
+    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_2e
+
+    .line 7
+    sget p2, Lcom/google/android/material/R$styleable;->RangeSlider_values:I
+
+    invoke-virtual {p1, p2, v6}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result p2
+
+    .line 8
+    invoke-virtual {p1}, Landroid/content/res/TypedArray;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p3
+
+    invoke-virtual {p3, p2}, Landroid/content/res/Resources;->obtainTypedArray(I)Landroid/content/res/TypedArray;
+
+    move-result-object p2
+
+    .line 9
+    invoke-static {p2}, Lcom/google/android/material/slider/RangeSlider;->convertToFloat(Landroid/content/res/TypedArray;)Ljava/util/List;
+
+    move-result-object p2
+
+    invoke-virtual {p0, p2}, Lcom/google/android/material/slider/RangeSlider;->setValues(Ljava/util/List;)V
+
+    .line 10
+    :cond_2e
+    sget p2, Lcom/google/android/material/R$styleable;->RangeSlider_minSeparation:I
+
+    const/4 p3, 0x0
+
+    invoke-virtual {p1, p2, p3}, Landroid/content/res/TypedArray;->getDimension(IF)F
+
+    move-result p2
+
+    iput p2, p0, Lcom/google/android/material/slider/RangeSlider;->minSeparation:F
+
+    .line 11
+    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
+
+    return-void
+.end method
+
+.method private static convertToFloat(Landroid/content/res/TypedArray;)Ljava/util/List;
+    .registers 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/res/TypedArray;",
+            ")",
+            "Ljava/util/List<",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    new-instance v0, Ljava/util/ArrayList;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    const/4 v1, 0x0
+
+    .line 7
+    :goto_6
+    invoke-virtual {p0}, Landroid/content/res/TypedArray;->length()I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result v2
+
+    .line 11
+    if-ge v1, v2, :cond_1c
+
+    .line 12
+    .line 13
+    const/high16 v2, -0x40800000    # -1.0f
+
+    .line 14
+    .line 15
+    invoke-virtual {p0, v1, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
+
+    .line 16
+    .line 17
+    .line 18
+    move-result v2
+
+    .line 19
+    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object v2
+
+    .line 23
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 24
+    .line 25
+    .line 26
+    add-int/lit8 v1, v1, 0x1
+
+    .line 27
+    .line 28
+    goto :goto_6
+
+    .line 29
+    :cond_1c
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public bridge synthetic clearOnChangeListeners()V
+    .registers 1
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->clearOnChangeListeners()V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic clearOnSliderTouchListeners()V
+    .registers 1
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->clearOnSliderTouchListeners()V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic dispatchHoverEvent(Landroid/view/MotionEvent;)Z
+    .registers 2
+    .param p1    # Landroid/view/MotionEvent;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->dispatchHoverEvent(Landroid/view/MotionEvent;)Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p1
+
+    .line 5
+    return p1
+.end method
+
+.method public bridge synthetic dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+    .registers 2
+    .param p1    # Landroid/view/KeyEvent;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p1
+
+    .line 5
+    return p1
+.end method
+
+.method public bridge synthetic getAccessibilityClassName()Ljava/lang/CharSequence;
+    .registers 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getAccessibilityClassName()Ljava/lang/CharSequence;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    return-object v0
+.end method
+
+.method public bridge synthetic getActiveThumbIndex()I
+    .registers 2
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getActiveThumbIndex()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    return v0
+.end method
+
+.method public bridge synthetic getFocusedThumbIndex()I
+    .registers 2
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getFocusedThumbIndex()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    return v0
+.end method
+
+.method public bridge synthetic getHaloRadius()I
+    .registers 2
+    .annotation build Landroidx/annotation/Dimension;
+    .end annotation
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getHaloRadius()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    return v0
+.end method
+
+.method public bridge synthetic getHaloTintList()Landroid/content/res/ColorStateList;
+    .registers 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getHaloTintList()Landroid/content/res/ColorStateList;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    return-object v0
+.end method
+
+.method public bridge synthetic getLabelBehavior()I
+    .registers 2
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getLabelBehavior()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    return v0
+.end method
+
+.method public getMinSeparation()F
+    .registers 2
+
+    .line 1
+    iget v0, p0, Lcom/google/android/material/slider/RangeSlider;->minSeparation:F
+
+    .line 2
+    .line 3
+    return v0
+.end method
+
+.method public bridge synthetic getStepSize()F
+    .registers 2
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getStepSize()F
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    return v0
+.end method
+
+.method public bridge synthetic getThumbElevation()F
+    .registers 2
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getThumbElevation()F
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    return v0
+.end method
+
+.method public bridge synthetic getThumbRadius()I
+    .registers 2
+    .annotation build Landroidx/annotation/Dimension;
+    .end annotation
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getThumbRadius()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    return v0
+.end method
+
+.method public bridge synthetic getThumbStrokeColor()Landroid/content/res/ColorStateList;
+    .registers 2
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getThumbStrokeColor()Landroid/content/res/ColorStateList;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    return-object v0
+.end method
+
+.method public bridge synthetic getThumbStrokeWidth()F
+    .registers 2
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getThumbStrokeWidth()F
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    return v0
+.end method
+
+.method public bridge synthetic getThumbTintList()Landroid/content/res/ColorStateList;
+    .registers 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getThumbTintList()Landroid/content/res/ColorStateList;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    return-object v0
+.end method
+
+.method public bridge synthetic getTickActiveTintList()Landroid/content/res/ColorStateList;
+    .registers 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getTickActiveTintList()Landroid/content/res/ColorStateList;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    return-object v0
+.end method
+
+.method public bridge synthetic getTickInactiveTintList()Landroid/content/res/ColorStateList;
+    .registers 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getTickInactiveTintList()Landroid/content/res/ColorStateList;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    return-object v0
+.end method
+
+.method public bridge synthetic getTickTintList()Landroid/content/res/ColorStateList;
+    .registers 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getTickTintList()Landroid/content/res/ColorStateList;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    return-object v0
+.end method
+
+.method public bridge synthetic getTrackActiveTintList()Landroid/content/res/ColorStateList;
+    .registers 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getTrackActiveTintList()Landroid/content/res/ColorStateList;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    return-object v0
+.end method
+
+.method public bridge synthetic getTrackHeight()I
+    .registers 2
+    .annotation build Landroidx/annotation/Dimension;
+    .end annotation
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getTrackHeight()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    return v0
+.end method
+
+.method public bridge synthetic getTrackInactiveTintList()Landroid/content/res/ColorStateList;
+    .registers 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getTrackInactiveTintList()Landroid/content/res/ColorStateList;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    return-object v0
+.end method
+
+.method public bridge synthetic getTrackSidePadding()I
+    .registers 2
+    .annotation build Landroidx/annotation/Dimension;
+    .end annotation
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getTrackSidePadding()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    return v0
+.end method
+
+.method public bridge synthetic getTrackTintList()Landroid/content/res/ColorStateList;
+    .registers 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getTrackTintList()Landroid/content/res/ColorStateList;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    return-object v0
+.end method
+
+.method public bridge synthetic getTrackWidth()I
+    .registers 2
+    .annotation build Landroidx/annotation/Dimension;
+    .end annotation
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getTrackWidth()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    return v0
+.end method
+
+.method public bridge synthetic getValueFrom()F
+    .registers 2
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getValueFrom()F
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    return v0
+.end method
+
+.method public bridge synthetic getValueTo()F
+    .registers 2
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getValueTo()F
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    return v0
+.end method
+
+.method public getValues()Ljava/util/List;
+    .registers 2
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->getValues()Ljava/util/List;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    return-object v0
+.end method
+
+.method public bridge synthetic hasLabelFormatter()Z
+    .registers 2
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->hasLabelFormatter()Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    return v0
+.end method
+
+.method public bridge synthetic isTickVisible()Z
+    .registers 2
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->isTickVisible()Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    return v0
+.end method
+
+.method public bridge synthetic onKeyDown(ILandroid/view/KeyEvent;)Z
+    .registers 3
+    .param p2    # Landroid/view/KeyEvent;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1, p2}, Lcom/google/android/material/slider/BaseSlider;->onKeyDown(ILandroid/view/KeyEvent;)Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p1
+
+    .line 5
+    return p1
+.end method
+
+.method public bridge synthetic onKeyUp(ILandroid/view/KeyEvent;)Z
+    .registers 3
+    .param p2    # Landroid/view/KeyEvent;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1, p2}, Lcom/google/android/material/slider/BaseSlider;->onKeyUp(ILandroid/view/KeyEvent;)Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p1
+
+    .line 5
+    return p1
+.end method
+
+.method public onRestoreInstanceState(Landroid/os/Parcelable;)V
+    .registers 3
+    .param p1    # Landroid/os/Parcelable;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+
+    .line 1
+    check-cast p1, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;
+
+    .line 2
+    .line 3
+    invoke-virtual {p1}, Landroid/view/AbsSavedState;->getSuperState()Landroid/os/Parcelable;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    invoke-super {p0, v0}, Lcom/google/android/material/slider/BaseSlider;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+
+    .line 8
+    .line 9
+    .line 10
+    invoke-static {p1}, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;->access$000(Lcom/google/android/material/slider/RangeSlider$RangeSliderState;)F
+
+    .line 11
+    .line 12
+    .line 13
+    move-result v0
+
+    .line 14
+    iput v0, p0, Lcom/google/android/material/slider/RangeSlider;->minSeparation:F
+
+    .line 15
+    .line 16
+    invoke-static {p1}, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;->access$100(Lcom/google/android/material/slider/RangeSlider$RangeSliderState;)I
+
+    .line 17
+    .line 18
+    .line 19
+    move-result p1
+
+    .line 20
+    iput p1, p0, Lcom/google/android/material/slider/RangeSlider;->separationUnit:I
+
+    .line 21
+    .line 22
+    invoke-virtual {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setSeparationUnit(I)V
+
+    .line 23
+    .line 24
+    .line 25
+    return-void
+.end method
+
+.method public onSaveInstanceState()Landroid/os/Parcelable;
+    .registers 3
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .line 1
+    invoke-super {p0}, Lcom/google/android/material/slider/BaseSlider;->onSaveInstanceState()Landroid/os/Parcelable;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    new-instance v1, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;
+
+    .line 6
+    .line 7
+    invoke-direct {v1, v0}, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;-><init>(Landroid/os/Parcelable;)V
+
+    .line 8
+    .line 9
+    .line 10
+    iget v0, p0, Lcom/google/android/material/slider/RangeSlider;->minSeparation:F
+
+    .line 11
+    .line 12
+    invoke-static {v1, v0}, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;->access$002(Lcom/google/android/material/slider/RangeSlider$RangeSliderState;F)F
+
+    .line 13
+    .line 14
+    .line 15
+    iget v0, p0, Lcom/google/android/material/slider/RangeSlider;->separationUnit:I
+
+    .line 16
+    .line 17
+    invoke-static {v1, v0}, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;->access$102(Lcom/google/android/material/slider/RangeSlider$RangeSliderState;I)I
+
+    .line 18
+    .line 19
+    .line 20
+    return-object v1
+.end method
+
+.method public bridge synthetic onTouchEvent(Landroid/view/MotionEvent;)Z
+    .registers 2
+    .param p1    # Landroid/view/MotionEvent;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p1
+
+    .line 5
+    return p1
+.end method
+
+.method public bridge synthetic setEnabled(Z)V
+    .registers 2
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setEnabled(Z)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setFocusedThumbIndex(I)V
+    .registers 2
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setFocusedThumbIndex(I)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setHaloRadius(I)V
+    .registers 2
+    .param p1    # I
+        .annotation build Landroidx/annotation/Dimension;
+        .end annotation
+
+        .annotation build Landroidx/annotation/IntRange;
+            from = 0x0L
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setHaloRadius(I)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setHaloRadiusResource(I)V
+    .registers 2
+    .param p1    # I
+        .annotation build Landroidx/annotation/DimenRes;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setHaloRadiusResource(I)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setHaloTintList(Landroid/content/res/ColorStateList;)V
+    .registers 2
+    .param p1    # Landroid/content/res/ColorStateList;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setHaloTintList(Landroid/content/res/ColorStateList;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setLabelBehavior(I)V
+    .registers 2
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setLabelBehavior(I)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setLabelFormatter(Lcom/google/android/material/slider/LabelFormatter;)V
+    .registers 2
+    .param p1    # Lcom/google/android/material/slider/LabelFormatter;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setLabelFormatter(Lcom/google/android/material/slider/LabelFormatter;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public setMinSeparation(F)V
+    .registers 2
+    .param p1    # F
+        .annotation build Landroidx/annotation/Dimension;
+        .end annotation
+    .end param
+
+    .line 1
+    iput p1, p0, Lcom/google/android/material/slider/RangeSlider;->minSeparation:F
+
+    .line 2
+    .line 3
+    const/4 p1, 0x0
+
+    .line 4
+    iput p1, p0, Lcom/google/android/material/slider/RangeSlider;->separationUnit:I
+
+    .line 5
+    .line 6
+    invoke-virtual {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setSeparationUnit(I)V
+
+    .line 7
+    .line 8
+    .line 9
+    return-void
+.end method
+
+.method public setMinSeparationValue(F)V
+    .registers 2
+
+    .line 1
+    iput p1, p0, Lcom/google/android/material/slider/RangeSlider;->minSeparation:F
+
+    .line 2
+    .line 3
+    const/4 p1, 0x1
+
+    .line 4
+    iput p1, p0, Lcom/google/android/material/slider/RangeSlider;->separationUnit:I
+
+    .line 5
+    .line 6
+    invoke-virtual {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setSeparationUnit(I)V
+
+    .line 7
+    .line 8
+    .line 9
+    return-void
+.end method
+
+.method public bridge synthetic setStepSize(F)V
+    .registers 2
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setStepSize(F)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setThumbElevation(F)V
+    .registers 2
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setThumbElevation(F)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setThumbElevationResource(I)V
+    .registers 2
+    .param p1    # I
+        .annotation build Landroidx/annotation/DimenRes;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setThumbElevationResource(I)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setThumbRadius(I)V
+    .registers 2
+    .param p1    # I
+        .annotation build Landroidx/annotation/Dimension;
+        .end annotation
+
+        .annotation build Landroidx/annotation/IntRange;
+            from = 0x0L
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setThumbRadius(I)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setThumbRadiusResource(I)V
+    .registers 2
+    .param p1    # I
+        .annotation build Landroidx/annotation/DimenRes;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setThumbRadiusResource(I)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setThumbStrokeColor(Landroid/content/res/ColorStateList;)V
+    .registers 2
+    .param p1    # Landroid/content/res/ColorStateList;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setThumbStrokeColor(Landroid/content/res/ColorStateList;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setThumbStrokeColorResource(I)V
+    .registers 2
+    .param p1    # I
+        .annotation build Landroidx/annotation/ColorRes;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setThumbStrokeColorResource(I)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setThumbStrokeWidth(F)V
+    .registers 2
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setThumbStrokeWidth(F)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setThumbStrokeWidthResource(I)V
+    .registers 2
+    .param p1    # I
+        .annotation build Landroidx/annotation/DimenRes;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setThumbStrokeWidthResource(I)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setThumbTintList(Landroid/content/res/ColorStateList;)V
+    .registers 2
+    .param p1    # Landroid/content/res/ColorStateList;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setThumbTintList(Landroid/content/res/ColorStateList;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setTickActiveTintList(Landroid/content/res/ColorStateList;)V
+    .registers 2
+    .param p1    # Landroid/content/res/ColorStateList;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setTickActiveTintList(Landroid/content/res/ColorStateList;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setTickInactiveTintList(Landroid/content/res/ColorStateList;)V
+    .registers 2
+    .param p1    # Landroid/content/res/ColorStateList;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setTickInactiveTintList(Landroid/content/res/ColorStateList;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setTickTintList(Landroid/content/res/ColorStateList;)V
+    .registers 2
+    .param p1    # Landroid/content/res/ColorStateList;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setTickTintList(Landroid/content/res/ColorStateList;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setTickVisible(Z)V
+    .registers 2
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setTickVisible(Z)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setTrackActiveTintList(Landroid/content/res/ColorStateList;)V
+    .registers 2
+    .param p1    # Landroid/content/res/ColorStateList;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setTrackActiveTintList(Landroid/content/res/ColorStateList;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setTrackHeight(I)V
+    .registers 2
+    .param p1    # I
+        .annotation build Landroidx/annotation/Dimension;
+        .end annotation
+
+        .annotation build Landroidx/annotation/IntRange;
+            from = 0x0L
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setTrackHeight(I)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setTrackInactiveTintList(Landroid/content/res/ColorStateList;)V
+    .registers 2
+    .param p1    # Landroid/content/res/ColorStateList;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setTrackInactiveTintList(Landroid/content/res/ColorStateList;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setTrackTintList(Landroid/content/res/ColorStateList;)V
+    .registers 2
+    .param p1    # Landroid/content/res/ColorStateList;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setTrackTintList(Landroid/content/res/ColorStateList;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setValueFrom(F)V
+    .registers 2
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setValueFrom(F)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public bridge synthetic setValueTo(F)V
+    .registers 2
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setValueTo(F)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public setValues(Ljava/util/List;)V
+    .registers 2
+    .param p1    # Ljava/util/List;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/Float;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 2
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setValues(Ljava/util/List;)V
+
+    return-void
+.end method
+
+.method public varargs setValues([Ljava/lang/Float;)V
+    .registers 2
+    .param p1    # [Ljava/lang/Float;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Lcom/google/android/material/slider/BaseSlider;->setValues([Ljava/lang/Float;)V
+
+    return-void
+.end method
+
+###### Class com.google.android.material.slider.RangeSlider.AnonymousClass1 (com.google.android.material.slider.RangeSlider$1)
+.class synthetic Lcom/google/android/material/slider/RangeSlider$1;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/android/material/slider/RangeSlider;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1009
+    name = null
+.end annotation
+
+###### Class com.google.android.material.slider.RangeSlider.OnChangeListener (com.google.android.material.slider.RangeSlider$OnChangeListener)
+.class public interface abstract Lcom/google/android/material/slider/RangeSlider$OnChangeListener;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/google/android/material/slider/BaseOnChangeListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/android/material/slider/RangeSlider;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "OnChangeListener"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/material/slider/BaseOnChangeListener<",
+        "Lcom/google/android/material/slider/RangeSlider;",
+        ">;"
+    }
+.end annotation
+
+###### Class com.google.android.material.slider.RangeSlider.OnSliderTouchListener (com.google.android.material.slider.RangeSlider$OnSliderTouchListener)
+.class public interface abstract Lcom/google/android/material/slider/RangeSlider$OnSliderTouchListener;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/google/android/material/slider/BaseOnSliderTouchListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/android/material/slider/RangeSlider;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "OnSliderTouchListener"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/material/slider/BaseOnSliderTouchListener<",
+        "Lcom/google/android/material/slider/RangeSlider;",
+        ">;"
+    }
+.end annotation
+
+###### Class com.google.android.material.slider.RangeSlider.RangeSliderState (com.google.android.material.slider.RangeSlider$RangeSliderState)
+.class Lcom/google/android/material/slider/RangeSlider$RangeSliderState;
+.super Landroid/view/AbsSavedState;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/android/material/slider/RangeSlider;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "RangeSliderState"
+.end annotation
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lcom/google/android/material/slider/RangeSlider$RangeSliderState;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# instance fields
+.field private minSeparation:F
+
+.field private separationUnit:I
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .registers 1
+
+    .line 1
+    new-instance v0, Lcom/google/android/material/slider/RangeSlider$RangeSliderState$1;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Lcom/google/android/material/slider/RangeSlider$RangeSliderState$1;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    sput-object v0, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+.method private constructor <init>(Landroid/os/Parcel;)V
+    .registers 3
+
+    .line 3
+    const-class v0, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Landroid/view/AbsSavedState;-><init>(Landroid/os/Parcelable;)V
+
+    .line 4
+    invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;->minSeparation:F
+
+    .line 5
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result p1
+
+    iput p1, p0, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;->separationUnit:I
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Landroid/os/Parcel;Lcom/google/android/material/slider/RangeSlider$1;)V
+    .registers 3
+
+    .line 1
+    invoke-direct {p0, p1}, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;-><init>(Landroid/os/Parcel;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcelable;)V
+    .registers 2
+
+    .line 2
+    invoke-direct {p0, p1}, Landroid/view/AbsSavedState;-><init>(Landroid/os/Parcelable;)V
+
+    return-void
+.end method
+
+.method public static synthetic access$000(Lcom/google/android/material/slider/RangeSlider$RangeSliderState;)F
+    .registers 1
+
+    .line 1
+    iget p0, p0, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;->minSeparation:F
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public static synthetic access$002(Lcom/google/android/material/slider/RangeSlider$RangeSliderState;F)F
+    .registers 2
+
+    .line 1
+    iput p1, p0, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;->minSeparation:F
+
+    .line 2
+    .line 3
+    return p1
+.end method
+
+.method public static synthetic access$100(Lcom/google/android/material/slider/RangeSlider$RangeSliderState;)I
+    .registers 1
+
+    .line 1
+    iget p0, p0, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;->separationUnit:I
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public static synthetic access$102(Lcom/google/android/material/slider/RangeSlider$RangeSliderState;I)I
+    .registers 2
+
+    .line 1
+    iput p1, p0, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;->separationUnit:I
+
+    .line 2
+    .line 3
+    return p1
+.end method
+
+
+# virtual methods
+.method public writeToParcel(Landroid/os/Parcel;I)V
+    .registers 3
+
+    .line 1
+    invoke-super {p0, p1, p2}, Landroid/view/AbsSavedState;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 2
+    .line 3
+    .line 4
+    iget p2, p0, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;->minSeparation:F
+
+    .line 5
+    .line 6
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeFloat(F)V
+
+    .line 7
+    .line 8
+    .line 9
+    iget p2, p0, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;->separationUnit:I
+
+    .line 10
+    .line 11
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 12
+    .line 13
+    .line 14
+    return-void
+.end method
+
+###### Class com.google.android.material.slider.RangeSlider.RangeSliderState.AnonymousClass1 (com.google.android.material.slider.RangeSlider$RangeSliderState$1)
+.class final Lcom/google/android/material/slider/RangeSlider$RangeSliderState$1;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/android/material/slider/RangeSlider$RangeSliderState;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator<",
+        "Lcom/google/android/material/slider/RangeSlider$RangeSliderState;",
+        ">;"
+    }
+.end annotation
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public createFromParcel(Landroid/os/Parcel;)Lcom/google/android/material/slider/RangeSlider$RangeSliderState;
+    .registers 4
+
+    .line 2
+    new-instance v0, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p1, v1}, Lcom/google/android/material/slider/RangeSlider$RangeSliderState;-><init>(Landroid/os/Parcel;Lcom/google/android/material/slider/RangeSlider$1;)V
+
+    return-object v0
+.end method
+
+.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .registers 2
+
+    .line 1
+    invoke-virtual {p0, p1}, Lcom/google/android/material/slider/RangeSlider$RangeSliderState$1;->createFromParcel(Landroid/os/Parcel;)Lcom/google/android/material/slider/RangeSlider$RangeSliderState;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public newArray(I)[Lcom/google/android/material/slider/RangeSlider$RangeSliderState;
+    .registers 2
+
+    .line 2
+    new-array p1, p1, [Lcom/google/android/material/slider/RangeSlider$RangeSliderState;
+
+    return-object p1
+.end method
+
+.method public bridge synthetic newArray(I)[Ljava/lang/Object;
+    .registers 2
+
+    .line 1
+    invoke-virtual {p0, p1}, Lcom/google/android/material/slider/RangeSlider$RangeSliderState$1;->newArray(I)[Lcom/google/android/material/slider/RangeSlider$RangeSliderState;
+
+    move-result-object p1
+
+    return-object p1
+.end method

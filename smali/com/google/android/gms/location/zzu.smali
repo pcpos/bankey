@@ -1,0 +1,15 @@
+###### Class com.google.android.gms.location.zzu (com.google.android.gms.location.zzu)
+.class public interface abstract Lcom/google/android/gms/location/zzu;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/os/IInterface;
+
+
+# virtual methods
+.method public abstract zzd(Landroid/location/Location;)V
+.end method
+
+.method public abstract zze()V
+.end method

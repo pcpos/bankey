@@ -1,0 +1,84 @@
+###### Class androidx.navigation.NavHostController (androidx.navigation.NavHostController)
+.class public Landroidx/navigation/NavHostController;
+.super Landroidx/navigation/NavController;
+.source "SourceFile"
+
+
+# direct methods
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 2
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-direct {p0, p1}, Landroidx/navigation/NavController;-><init>(Landroid/content/Context;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+
+# virtual methods
+.method public final enableOnBackPressed(Z)V
+    .registers 2
+
+    .line 1
+    invoke-super {p0, p1}, Landroidx/navigation/NavController;->enableOnBackPressed(Z)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public final setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
+    .registers 2
+    .param p1    # Landroidx/lifecycle/LifecycleOwner;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Landroidx/navigation/NavController;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public final setOnBackPressedDispatcher(Landroidx/activity/OnBackPressedDispatcher;)V
+    .registers 2
+    .param p1    # Landroidx/activity/OnBackPressedDispatcher;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Landroidx/navigation/NavController;->setOnBackPressedDispatcher(Landroidx/activity/OnBackPressedDispatcher;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public final setViewModelStore(Landroidx/lifecycle/ViewModelStore;)V
+    .registers 2
+    .param p1    # Landroidx/lifecycle/ViewModelStore;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    .line 1
+    invoke-super {p0, p1}, Landroidx/navigation/NavController;->setViewModelStore(Landroidx/lifecycle/ViewModelStore;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method

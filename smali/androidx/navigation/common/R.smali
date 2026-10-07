@@ -1,0 +1,901 @@
+###### Class androidx.navigation.common.R (androidx.navigation.common.R)
+.class public final Landroidx/navigation/common/R;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/navigation/common/R$attr;,
+        Landroidx/navigation/common/R$color;,
+        Landroidx/navigation/common/R$dimen;,
+        Landroidx/navigation/common/R$drawable;,
+        Landroidx/navigation/common/R$id;,
+        Landroidx/navigation/common/R$integer;,
+        Landroidx/navigation/common/R$layout;,
+        Landroidx/navigation/common/R$string;,
+        Landroidx/navigation/common/R$style;,
+        Landroidx/navigation/common/R$styleable;
+    }
+.end annotation
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+###### Class androidx.navigation.common.R.attr (androidx.navigation.common.R$attr)
+.class public final Landroidx/navigation/common/R$attr;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/navigation/common/R;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "attr"
+.end annotation
+
+
+# static fields
+.field public static action:I = 0x7f040002
+
+.field public static alpha:I = 0x7f04002d
+
+.field public static argType:I = 0x7f040036
+
+.field public static destination:I = 0x7f040151
+
+.field public static enterAnim:I = 0x7f040184
+
+.field public static exitAnim:I = 0x7f04018c
+
+.field public static font:I = 0x7f0401ca
+
+.field public static fontProviderAuthority:I = 0x7f0401cc
+
+.field public static fontProviderCerts:I = 0x7f0401cd
+
+.field public static fontProviderFetchStrategy:I = 0x7f0401ce
+
+.field public static fontProviderFetchTimeout:I = 0x7f0401cf
+
+.field public static fontProviderPackage:I = 0x7f0401d0
+
+.field public static fontProviderQuery:I = 0x7f0401d1
+
+.field public static fontStyle:I = 0x7f0401d3
+
+.field public static fontVariationSettings:I = 0x7f0401d4
+
+.field public static fontWeight:I = 0x7f0401d5
+
+.field public static launchSingleTop:I = 0x7f04023a
+
+.field public static mimeType:I = 0x7f0402cf
+
+.field public static nullable:I = 0x7f040303
+
+.field public static popEnterAnim:I = 0x7f04032d
+
+.field public static popExitAnim:I = 0x7f04032e
+
+.field public static popUpTo:I = 0x7f04032f
+
+.field public static popUpToInclusive:I = 0x7f040330
+
+.field public static startDestination:I = 0x7f04038c
+
+.field public static ttcIndex:I = 0x7f040452
+
+.field public static uri:I = 0x7f040460
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+###### Class androidx.navigation.common.R.color (androidx.navigation.common.R$color)
+.class public final Landroidx/navigation/common/R$color;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/navigation/common/R;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "color"
+.end annotation
+
+
+# static fields
+.field public static notification_action_color_filter:I = 0x7f06025e
+
+.field public static notification_icon_bg_color:I = 0x7f06025f
+
+.field public static ripple_material_light:I = 0x7f06026d
+
+.field public static secondary_text_default_material_light:I = 0x7f060270
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+###### Class androidx.navigation.common.R.dimen (androidx.navigation.common.R$dimen)
+.class public final Landroidx/navigation/common/R$dimen;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/navigation/common/R;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "dimen"
+.end annotation
+
+
+# static fields
+.field public static compat_button_inset_horizontal_material:I = 0x7f070061
+
+.field public static compat_button_inset_vertical_material:I = 0x7f070062
+
+.field public static compat_button_padding_horizontal_material:I = 0x7f070063
+
+.field public static compat_button_padding_vertical_material:I = 0x7f070064
+
+.field public static compat_control_corner_material:I = 0x7f070065
+
+.field public static compat_notification_large_icon_max_height:I = 0x7f070066
+
+.field public static compat_notification_large_icon_max_width:I = 0x7f070067
+
+.field public static notification_action_icon_size:I = 0x7f070230
+
+.field public static notification_action_text_size:I = 0x7f070231
+
+.field public static notification_big_circle_margin:I = 0x7f070232
+
+.field public static notification_content_margin_start:I = 0x7f070233
+
+.field public static notification_large_icon_height:I = 0x7f070234
+
+.field public static notification_large_icon_width:I = 0x7f070235
+
+.field public static notification_main_column_padding_top:I = 0x7f070236
+
+.field public static notification_media_narrow_margin:I = 0x7f070237
+
+.field public static notification_right_icon_size:I = 0x7f070238
+
+.field public static notification_right_side_padding_top:I = 0x7f070239
+
+.field public static notification_small_icon_background_padding:I = 0x7f07023a
+
+.field public static notification_small_icon_size_as_large:I = 0x7f07023b
+
+.field public static notification_subtext_size:I = 0x7f07023c
+
+.field public static notification_top_pad:I = 0x7f07023d
+
+.field public static notification_top_pad_large_text:I = 0x7f07023e
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+###### Class androidx.navigation.common.R.drawable (androidx.navigation.common.R$drawable)
+.class public final Landroidx/navigation/common/R$drawable;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/navigation/common/R;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "drawable"
+.end annotation
+
+
+# static fields
+.field public static notification_action_background:I = 0x7f0801ca
+
+.field public static notification_bg:I = 0x7f0801cb
+
+.field public static notification_bg_low:I = 0x7f0801cc
+
+.field public static notification_bg_low_normal:I = 0x7f0801cd
+
+.field public static notification_bg_low_pressed:I = 0x7f0801ce
+
+.field public static notification_bg_normal:I = 0x7f0801cf
+
+.field public static notification_bg_normal_pressed:I = 0x7f0801d0
+
+.field public static notification_icon_background:I = 0x7f0801d3
+
+.field public static notification_template_icon_bg:I = 0x7f0801d4
+
+.field public static notification_template_icon_low_bg:I = 0x7f0801d5
+
+.field public static notification_tile_bg:I = 0x7f0801d6
+
+.field public static notify_panel_notification_icon_bg:I = 0x7f0801d8
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+###### Class androidx.navigation.common.R.id (androidx.navigation.common.R$id)
+.class public final Landroidx/navigation/common/R$id;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/navigation/common/R;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "id"
+.end annotation
+
+
+# static fields
+.field public static accessibility_action_clickable_span:I = 0x7f09001f
+
+.field public static accessibility_custom_action_0:I = 0x7f090020
+
+.field public static accessibility_custom_action_1:I = 0x7f090021
+
+.field public static accessibility_custom_action_10:I = 0x7f090022
+
+.field public static accessibility_custom_action_11:I = 0x7f090023
+
+.field public static accessibility_custom_action_12:I = 0x7f090024
+
+.field public static accessibility_custom_action_13:I = 0x7f090025
+
+.field public static accessibility_custom_action_14:I = 0x7f090026
+
+.field public static accessibility_custom_action_15:I = 0x7f090027
+
+.field public static accessibility_custom_action_16:I = 0x7f090028
+
+.field public static accessibility_custom_action_17:I = 0x7f090029
+
+.field public static accessibility_custom_action_18:I = 0x7f09002a
+
+.field public static accessibility_custom_action_19:I = 0x7f09002b
+
+.field public static accessibility_custom_action_2:I = 0x7f09002c
+
+.field public static accessibility_custom_action_20:I = 0x7f09002d
+
+.field public static accessibility_custom_action_21:I = 0x7f09002e
+
+.field public static accessibility_custom_action_22:I = 0x7f09002f
+
+.field public static accessibility_custom_action_23:I = 0x7f090030
+
+.field public static accessibility_custom_action_24:I = 0x7f090031
+
+.field public static accessibility_custom_action_25:I = 0x7f090032
+
+.field public static accessibility_custom_action_26:I = 0x7f090033
+
+.field public static accessibility_custom_action_27:I = 0x7f090034
+
+.field public static accessibility_custom_action_28:I = 0x7f090035
+
+.field public static accessibility_custom_action_29:I = 0x7f090036
+
+.field public static accessibility_custom_action_3:I = 0x7f090037
+
+.field public static accessibility_custom_action_30:I = 0x7f090038
+
+.field public static accessibility_custom_action_31:I = 0x7f090039
+
+.field public static accessibility_custom_action_4:I = 0x7f09003a
+
+.field public static accessibility_custom_action_5:I = 0x7f09003b
+
+.field public static accessibility_custom_action_6:I = 0x7f09003c
+
+.field public static accessibility_custom_action_7:I = 0x7f09003d
+
+.field public static accessibility_custom_action_8:I = 0x7f09003e
+
+.field public static accessibility_custom_action_9:I = 0x7f09003f
+
+.field public static action_container:I = 0x7f09004e
+
+.field public static action_divider:I = 0x7f090050
+
+.field public static action_image:I = 0x7f090051
+
+.field public static action_text:I = 0x7f090057
+
+.field public static actions:I = 0x7f090058
+
+.field public static async:I = 0x7f09007c
+
+.field public static blocking:I = 0x7f0900a4
+
+.field public static chronometer:I = 0x7f0900dc
+
+.field public static dialog_button:I = 0x7f090127
+
+.field public static forever:I = 0x7f09020e
+
+.field public static icon:I = 0x7f090240
+
+.field public static icon_group:I = 0x7f090241
+
+.field public static info:I = 0x7f090258
+
+.field public static italic:I = 0x7f09026a
+
+.field public static line1:I = 0x7f09028b
+
+.field public static line3:I = 0x7f09028c
+
+.field public static normal:I = 0x7f09032d
+
+.field public static notification_background:I = 0x7f090337
+
+.field public static notification_main_column:I = 0x7f090338
+
+.field public static notification_main_column_container:I = 0x7f090339
+
+.field public static right_icon:I = 0x7f0903b8
+
+.field public static right_side:I = 0x7f0903b9
+
+.field public static tag_accessibility_actions:I = 0x7f090448
+
+.field public static tag_accessibility_clickable_spans:I = 0x7f090449
+
+.field public static tag_accessibility_heading:I = 0x7f09044a
+
+.field public static tag_accessibility_pane_title:I = 0x7f09044b
+
+.field public static tag_screen_reader_focusable:I = 0x7f09044f
+
+.field public static tag_transition_group:I = 0x7f090451
+
+.field public static tag_unhandled_key_event_manager:I = 0x7f090452
+
+.field public static tag_unhandled_key_listeners:I = 0x7f090453
+
+.field public static text:I = 0x7f09045b
+
+.field public static text2:I = 0x7f09045d
+
+.field public static time:I = 0x7f090475
+
+.field public static title:I = 0x7f090477
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+###### Class androidx.navigation.common.R.integer (androidx.navigation.common.R$integer)
+.class public final Landroidx/navigation/common/R$integer;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/navigation/common/R;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "integer"
+.end annotation
+
+
+# static fields
+.field public static status_bar_notification_info_maxnum:I = 0x7f0a0045
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+###### Class androidx.navigation.common.R.layout (androidx.navigation.common.R$layout)
+.class public final Landroidx/navigation/common/R$layout;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/navigation/common/R;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "layout"
+.end annotation
+
+
+# static fields
+.field public static custom_dialog:I = 0x7f0c0061
+
+.field public static notification_action:I = 0x7f0c0106
+
+.field public static notification_action_tombstone:I = 0x7f0c0107
+
+.field public static notification_template_custom_big:I = 0x7f0c0110
+
+.field public static notification_template_icon_group:I = 0x7f0c0111
+
+.field public static notification_template_part_chronometer:I = 0x7f0c0115
+
+.field public static notification_template_part_time:I = 0x7f0c0116
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+###### Class androidx.navigation.common.R.string (androidx.navigation.common.R$string)
+.class public final Landroidx/navigation/common/R$string;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/navigation/common/R;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "string"
+.end annotation
+
+
+# static fields
+.field public static status_bar_notification_info_overflow:I = 0x7f12029b
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+###### Class androidx.navigation.common.R.style (androidx.navigation.common.R$style)
+.class public final Landroidx/navigation/common/R$style;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/navigation/common/R;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "style"
+.end annotation
+
+
+# static fields
+.field public static TextAppearance_Compat_Notification:I = 0x7f1301af
+
+.field public static TextAppearance_Compat_Notification_Info:I = 0x7f1301b0
+
+.field public static TextAppearance_Compat_Notification_Line2:I = 0x7f1301b2
+
+.field public static TextAppearance_Compat_Notification_Time:I = 0x7f1301b5
+
+.field public static TextAppearance_Compat_Notification_Title:I = 0x7f1301b7
+
+.field public static Widget_Compat_NotificationActionContainer:I = 0x7f1302fa
+
+.field public static Widget_Compat_NotificationActionText:I = 0x7f1302fb
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+###### Class androidx.navigation.common.R.styleable (androidx.navigation.common.R$styleable)
+.class public final Landroidx/navigation/common/R$styleable;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/navigation/common/R;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "styleable"
+.end annotation
+
+
+# static fields
+.field public static ColorStateListItem:[I = null
+
+.field public static ColorStateListItem_alpha:I = 0x3
+
+.field public static ColorStateListItem_android_alpha:I = 0x1
+
+.field public static ColorStateListItem_android_color:I = 0x0
+
+.field public static ColorStateListItem_android_lStar:I = 0x2
+
+.field public static ColorStateListItem_lStar:I = 0x4
+
+.field public static FontFamily:[I = null
+
+.field public static FontFamilyFont:[I = null
+
+.field public static FontFamilyFont_android_font:I = 0x0
+
+.field public static FontFamilyFont_android_fontStyle:I = 0x2
+
+.field public static FontFamilyFont_android_fontVariationSettings:I = 0x4
+
+.field public static FontFamilyFont_android_fontWeight:I = 0x1
+
+.field public static FontFamilyFont_android_ttcIndex:I = 0x3
+
+.field public static FontFamilyFont_font:I = 0x5
+
+.field public static FontFamilyFont_fontStyle:I = 0x6
+
+.field public static FontFamilyFont_fontVariationSettings:I = 0x7
+
+.field public static FontFamilyFont_fontWeight:I = 0x8
+
+.field public static FontFamilyFont_ttcIndex:I = 0x9
+
+.field public static FontFamily_fontProviderAuthority:I = 0x0
+
+.field public static FontFamily_fontProviderCerts:I = 0x1
+
+.field public static FontFamily_fontProviderFetchStrategy:I = 0x2
+
+.field public static FontFamily_fontProviderFetchTimeout:I = 0x3
+
+.field public static FontFamily_fontProviderPackage:I = 0x4
+
+.field public static FontFamily_fontProviderQuery:I = 0x5
+
+.field public static FontFamily_fontProviderSystemFontFamily:I = 0x6
+
+.field public static GradientColor:[I = null
+
+.field public static GradientColorItem:[I = null
+
+.field public static GradientColorItem_android_color:I = 0x0
+
+.field public static GradientColorItem_android_offset:I = 0x1
+
+.field public static GradientColor_android_centerColor:I = 0x7
+
+.field public static GradientColor_android_centerX:I = 0x3
+
+.field public static GradientColor_android_centerY:I = 0x4
+
+.field public static GradientColor_android_endColor:I = 0x1
+
+.field public static GradientColor_android_endX:I = 0xa
+
+.field public static GradientColor_android_endY:I = 0xb
+
+.field public static GradientColor_android_gradientRadius:I = 0x5
+
+.field public static GradientColor_android_startColor:I = 0x0
+
+.field public static GradientColor_android_startX:I = 0x8
+
+.field public static GradientColor_android_startY:I = 0x9
+
+.field public static GradientColor_android_tileMode:I = 0x6
+
+.field public static GradientColor_android_type:I = 0x2
+
+.field public static NavAction:[I = null
+
+.field public static NavAction_android_id:I = 0x0
+
+.field public static NavAction_destination:I = 0x1
+
+.field public static NavAction_enterAnim:I = 0x2
+
+.field public static NavAction_exitAnim:I = 0x3
+
+.field public static NavAction_launchSingleTop:I = 0x4
+
+.field public static NavAction_popEnterAnim:I = 0x5
+
+.field public static NavAction_popExitAnim:I = 0x6
+
+.field public static NavAction_popUpTo:I = 0x7
+
+.field public static NavAction_popUpToInclusive:I = 0x8
+
+.field public static NavArgument:[I = null
+
+.field public static NavArgument_android_defaultValue:I = 0x1
+
+.field public static NavArgument_android_name:I = 0x0
+
+.field public static NavArgument_argType:I = 0x2
+
+.field public static NavArgument_nullable:I = 0x3
+
+.field public static NavDeepLink:[I = null
+
+.field public static NavDeepLink_action:I = 0x1
+
+.field public static NavDeepLink_android_autoVerify:I = 0x0
+
+.field public static NavDeepLink_mimeType:I = 0x2
+
+.field public static NavDeepLink_uri:I = 0x3
+
+.field public static NavGraphNavigator:[I = null
+
+.field public static NavGraphNavigator_startDestination:I = 0x0
+
+.field public static Navigator:[I = null
+
+.field public static Navigator_android_id:I = 0x1
+
+.field public static Navigator_android_label:I
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .registers 5
+
+    const v0, 0x7f04002d
+
+    const v1, 0x7f040233
+
+    const v2, 0x10101a5
+
+    const v3, 0x101031f
+
+    const v4, 0x1010647
+
+    filled-new-array {v2, v3, v4, v0, v1}, [I
+
+    move-result-object v0
+
+    sput-object v0, Landroidx/navigation/common/R$styleable;->ColorStateListItem:[I
+
+    const/4 v0, 0x7
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_7c
+
+    sput-object v0, Landroidx/navigation/common/R$styleable;->FontFamily:[I
+
+    const/16 v0, 0xa
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_8e
+
+    sput-object v0, Landroidx/navigation/common/R$styleable;->FontFamilyFont:[I
+
+    const/16 v0, 0xc
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_a6
+
+    sput-object v0, Landroidx/navigation/common/R$styleable;->GradientColor:[I
+
+    const v0, 0x1010514
+
+    filled-new-array {v2, v0}, [I
+
+    move-result-object v0
+
+    sput-object v0, Landroidx/navigation/common/R$styleable;->GradientColorItem:[I
+
+    const/16 v0, 0x9
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_c2
+
+    sput-object v0, Landroidx/navigation/common/R$styleable;->NavAction:[I
+
+    const v0, 0x7f040036
+
+    const v1, 0x7f040303
+
+    const v2, 0x1010003
+
+    const v3, 0x10101ed
+
+    filled-new-array {v2, v3, v0, v1}, [I
+
+    move-result-object v0
+
+    sput-object v0, Landroidx/navigation/common/R$styleable;->NavArgument:[I
+
+    const v0, 0x7f0402cf
+
+    const v1, 0x7f040460
+
+    const v2, 0x10104ee
+
+    const v3, 0x7f040002
+
+    filled-new-array {v2, v3, v0, v1}, [I
+
+    move-result-object v0
+
+    sput-object v0, Landroidx/navigation/common/R$styleable;->NavDeepLink:[I
+
+    const v0, 0x7f04038c
+
+    filled-new-array {v0}, [I
+
+    move-result-object v0
+
+    sput-object v0, Landroidx/navigation/common/R$styleable;->NavGraphNavigator:[I
+
+    const v0, 0x1010001
+
+    const v1, 0x10100d0
+
+    filled-new-array {v0, v1}, [I
+
+    move-result-object v0
+
+    sput-object v0, Landroidx/navigation/common/R$styleable;->Navigator:[I
+
+    return-void
+
+    nop
+
+    :array_7c
+    .array-data 4
+        0x7f0401cc
+        0x7f0401cd
+        0x7f0401ce
+        0x7f0401cf
+        0x7f0401d0
+        0x7f0401d1
+        0x7f0401d2
+    .end array-data
+
+    :array_8e
+    .array-data 4
+        0x1010532
+        0x1010533
+        0x101053f
+        0x101056f
+        0x1010570
+        0x7f0401ca
+        0x7f0401d3
+        0x7f0401d4
+        0x7f0401d5
+        0x7f040452
+    .end array-data
+
+    :array_a6
+    .array-data 4
+        0x101019d
+        0x101019e
+        0x10101a1
+        0x10101a2
+        0x10101a3
+        0x10101a4
+        0x1010201
+        0x101020b
+        0x1010510
+        0x1010511
+        0x1010512
+        0x1010513
+    .end array-data
+
+    :array_c2
+    .array-data 4
+        0x10100d0
+        0x7f040151
+        0x7f040184
+        0x7f04018c
+        0x7f04023a
+        0x7f04032d
+        0x7f04032e
+        0x7f04032f
+        0x7f040330
+    .end array-data
+.end method
+
+.method private constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

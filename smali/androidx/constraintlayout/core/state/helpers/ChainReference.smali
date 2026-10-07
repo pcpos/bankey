@@ -1,0 +1,95 @@
+###### Class androidx.constraintlayout.core.state.helpers.ChainReference (androidx.constraintlayout.core.state.helpers.ChainReference)
+.class public Landroidx/constraintlayout/core/state/helpers/ChainReference;
+.super Landroidx/constraintlayout/core/state/HelperReference;
+.source "SourceFile"
+
+
+# instance fields
+.field protected mBias:F
+
+.field protected mStyle:Landroidx/constraintlayout/core/state/State$Chain;
+
+
+# direct methods
+.method public constructor <init>(Landroidx/constraintlayout/core/state/State;Landroidx/constraintlayout/core/state/State$Helper;)V
+    .registers 3
+
+    .line 1
+    invoke-direct {p0, p1, p2}, Landroidx/constraintlayout/core/state/HelperReference;-><init>(Landroidx/constraintlayout/core/state/State;Landroidx/constraintlayout/core/state/State$Helper;)V
+
+    .line 2
+    .line 3
+    .line 4
+    const/high16 p1, 0x3f000000    # 0.5f
+
+    .line 5
+    .line 6
+    iput p1, p0, Landroidx/constraintlayout/core/state/helpers/ChainReference;->mBias:F
+
+    .line 7
+    .line 8
+    sget-object p1, Landroidx/constraintlayout/core/state/State$Chain;->SPREAD:Landroidx/constraintlayout/core/state/State$Chain;
+
+    .line 9
+    .line 10
+    iput-object p1, p0, Landroidx/constraintlayout/core/state/helpers/ChainReference;->mStyle:Landroidx/constraintlayout/core/state/State$Chain;
+
+    .line 11
+    .line 12
+    return-void
+.end method
+
+
+# virtual methods
+.method public bridge synthetic bias(F)Landroidx/constraintlayout/core/state/ConstraintReference;
+    .registers 2
+
+    .line 1
+    invoke-virtual {p0, p1}, Landroidx/constraintlayout/core/state/helpers/ChainReference;->bias(F)Landroidx/constraintlayout/core/state/helpers/ChainReference;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bias(F)Landroidx/constraintlayout/core/state/helpers/ChainReference;
+    .registers 2
+
+    .line 2
+    iput p1, p0, Landroidx/constraintlayout/core/state/helpers/ChainReference;->mBias:F
+
+    return-object p0
+.end method
+
+.method public getBias()F
+    .registers 2
+
+    .line 1
+    iget v0, p0, Landroidx/constraintlayout/core/state/helpers/ChainReference;->mBias:F
+
+    .line 2
+    .line 3
+    return v0
+.end method
+
+.method public getStyle()Landroidx/constraintlayout/core/state/State$Chain;
+    .registers 2
+
+    .line 1
+    sget-object v0, Landroidx/constraintlayout/core/state/State$Chain;->SPREAD:Landroidx/constraintlayout/core/state/State$Chain;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+.method public style(Landroidx/constraintlayout/core/state/State$Chain;)Landroidx/constraintlayout/core/state/helpers/ChainReference;
+    .registers 2
+
+    .line 1
+    iput-object p1, p0, Landroidx/constraintlayout/core/state/helpers/ChainReference;->mStyle:Landroidx/constraintlayout/core/state/State$Chain;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method

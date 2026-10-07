@@ -1,0 +1,4 @@
+###### Class defpackage.sh (sh)
+.class public interface abstract Lsh;
+.super Ljava/lang/Object;
+.source "SourceFile"

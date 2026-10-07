@@ -1,0 +1,12 @@
+###### Class com.google.android.gms.internal.measurement.zziy (com.google.android.gms.internal.measurement.zziy)
+.class public interface abstract Lcom/google/android/gms/internal/measurement/zziy;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/util/Iterator;
+
+
+# virtual methods
+.method public abstract zza()B
+.end method
